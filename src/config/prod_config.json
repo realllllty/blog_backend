@@ -1,0 +1,30 @@
+{
+    "db": {
+        "mysql": {
+            "host": "98.83.62.57",
+            "username": "root",
+            "password": "admin",
+            "database": "blog_online",
+            "port": 3306,
+            "charset": "utf8mb4",
+            "logger": "file",
+            "logging": true,
+            "multipleStatements": true,
+            "dropSchema": false,
+            "synchronize": true,
+            "supportBigNumbers": true,
+            "bigNumberStrings": true
+        }
+    },
+    "cloudflare": {
+        "client": {
+            "apiEmail": "17828126523l@gmail.com",
+            "apiKey": "d486af08f11f9598f9ebbf1860dfc8eec30b3"
+        },
+        "r2": {
+            "account_id": "fd39b70abba169022775047e644cffbf",
+            "bucket": "blog",
+            "parentAccessKeyId": "42f1a6e74c6feb76409f586252ada045"
+        }
+    }
+}
