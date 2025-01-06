@@ -1,7 +1,7 @@
 {
     "db": {
         "mysql": {
-            "host": "98.83.62.57",
+            "host": "localhost",
             "username": "root",
             "password": "admin",
             "database": "blog_online",
@@ -11,7 +11,7 @@
             "logging": true,
             "multipleStatements": true,
             "dropSchema": false,
-            "synchronize": true,
+            "synchronize": false,
             "supportBigNumbers": true,
             "bigNumberStrings": true
         }
