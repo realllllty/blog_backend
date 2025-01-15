@@ -4,6 +4,7 @@ import { InjectRepository } from "@nestjs/typeorm";
 import { Cloudflare } from "cloudflare";
 import { GalleryService } from "../gallery/gallery.service";
 import { CreateGalleryDto } from "../gallery/dto/create-gallery.dto";
+import { UpdateGalleryDto } from "../gallery/dto/update-gallery.dto";
 import { ResultData } from "src/common/utils/result";
 import { ArticleService } from '../article/article.service';
 import { CreateArticleDto } from "src/article/dto/create-article.dto";
@@ -53,5 +54,13 @@ export class AdminService {
 
     async createArticle(createArticleDto: CreateArticleDto): Promise<ResultData> {
         return this.articleService.createArticle(createArticleDto);
+    }
+
+    async removePicture(galleryId: string, pictureId: string): Promise<ResultData> {
+        return this.galleryService.removePicture(galleryId, pictureId);
+    }
+
+    async updateGallery(updateGalleryDto: UpdateGalleryDto): Promise<ResultData> {
+        return this.galleryService.updateGallery(updateGalleryDto);
     }
 }
