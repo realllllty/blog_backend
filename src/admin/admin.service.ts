@@ -8,6 +8,7 @@ import { UpdateGalleryDto } from "../gallery/dto/update-gallery.dto";
 import { ResultData } from "src/common/utils/result";
 import { ArticleService } from '../article/article.service';
 import { CreateArticleDto } from "src/article/dto/create-article.dto";
+import { UpdateArticleDto } from "src/article/dto/update-article.dto";
 
 @Injectable()
 export class AdminService {
@@ -62,5 +63,13 @@ export class AdminService {
 
     async updateGallery(updateGalleryDto: UpdateGalleryDto): Promise<ResultData> {
         return this.galleryService.updateGallery(updateGalleryDto);
+    }
+
+    async updateArticle(updateArticleDto: UpdateArticleDto): Promise<ResultData> {
+        return this.articleService.updateArticle(updateArticleDto);
+    }
+
+    async removeArticle(id: string): Promise<ResultData> {
+        return this.articleService.removeArticle(id);
     }
 }

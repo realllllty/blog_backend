@@ -3,7 +3,7 @@
         "mysql": {
             "host": "localhost",
             "username": "root",
-            "password": "admin",
+            "password": "root",
             "database": "blog_online",
             "port": 3306,
             "charset": "utf8mb4",

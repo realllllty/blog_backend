@@ -15,6 +15,7 @@ const configFileName = configFileNameObj[env];
 const configFilePath = path.resolve(__dirname, `${configFileName}_config.json`);
 
 try {
+    console.log(env);
     const configFileContent = fs.readFileSync(configFilePath, 'utf-8');
     // 需要提前在nest-cli当中配置相关json文件到assets当中(否则dist将不会包含目标文件)
     config = JSON.parse(configFileContent);

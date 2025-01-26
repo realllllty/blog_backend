@@ -3,10 +3,11 @@ import { AdminService } from "./admin.service";
 import { CreateGalleryDto } from "../gallery/dto/create-gallery.dto";
 import { UpdateGalleryDto } from "../gallery/dto/update-gallery.dto";
 import { CreateArticleDto } from "src/article/dto/create-article.dto";
+import { UpdateArticleDto } from "src/article/dto/update-article.dto";
 import { ResultData } from "src/common/utils/result";
 @Controller('admin')
 export class AdminController {
-    constructor(private readonly adminService: AdminService) {}
+    constructor(private readonly adminService: AdminService) { }
 
     @Get('cloudflare-temporary-token')
     async getCloudflareTemporaryToken() {
@@ -42,5 +43,18 @@ export class AdminController {
     @Put('update-gallery')
     async updateGallery(@Body() updateGalleryDto: UpdateGalleryDto) {
         return this.adminService.updateGallery(updateGalleryDto);
+    }
+
+    @Put('update-article')
+    async updateArticle(@Body() updateArticleDto: UpdateArticleDto) {
+        return this.adminService.updateArticle(updateArticleDto);
+    }
+
+    @Delete('delete-article')
+    async deleteArticle(@Body() data: { id: string }) {
+        if (data && Object.keys(data).length > 0) {
+            return this.adminService.removeArticle(data.id);
+        }
+        return ResultData.fail(0, 'id is required');
     }
 }
